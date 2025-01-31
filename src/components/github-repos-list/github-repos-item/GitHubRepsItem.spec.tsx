@@ -5,7 +5,10 @@ import { GitHubRepsItem, IGitHubRepsItemProps } from './GitHubRepsItem';
 
 jest.mock('react-i18next', () => ({
     useTranslation: () => ({
-        t: jest.fn((key) => key)
+        t: jest.fn((key) => key),
+        i18n: {
+            language: 'en'
+        }
     })
 }));
 

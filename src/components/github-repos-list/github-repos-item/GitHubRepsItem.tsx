@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { StarIcon } from '../../../shared/components';
@@ -13,7 +14,11 @@ export interface IGitHubRepsItemProps {
 }
 
 export function GitHubRepsItem({ repo }: IGitHubRepsItemProps) {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+
+    const updatedAt = useMemo(() => {
+        return dateFormatted(repo.updated_at);
+    }, [repo.updated_at, i18n.language]);
 
     return (
         <>
@@ -59,7 +64,7 @@ export function GitHubRepsItem({ repo }: IGitHubRepsItemProps) {
                     </div>
                     <span className="divider">·</span>
                     <div data-testid="github-repo-item-stargazers-count">
-                        {t('UpdateOn', { date: dateFormatted(repo.updated_at) })}
+                        {t('UpdateOn', { date: updatedAt })}
                     </div>
                 </div>
             </div>

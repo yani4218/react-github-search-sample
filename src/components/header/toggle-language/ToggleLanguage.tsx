@@ -22,7 +22,6 @@ export function ToggleLanguage() {
     }, [lang]);
 
     const onChangeLang = (langOption: Option) => {
-        console.log('qweqweqweqweqweqweq');
         dispatch(setLang(langOption.value));
     };
 

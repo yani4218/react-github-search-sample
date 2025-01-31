@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  # Job для установки зависимостей
+  install_dependencies:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Cache Node.js modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-modules-
+
+      - name: Install dependencies
+        run: npm install
+
+  # Job для линтинга и тестов
+  fe_quality:
+    runs-on: ubuntu-latest
+    needs: install_dependencies
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run linter
+        run: npx run eslint . --quiet
+
+      - name: Run tests
+        run: npx run jest
+
+  # Job для сборки проекта
+  build:
+    runs-on: ubuntu-latest
+    needs: fe_quality
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build project
+        run: npx run build

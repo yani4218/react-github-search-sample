@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { getRepos } from '../api';
-import { IGitHubRepo, IPagination } from '../../entities';
+import { IGitHubRepo, IList, IPagination } from '../../entities';
 
 interface IGitHubState {
     repos: IGitHubRepo[];
@@ -13,12 +13,6 @@ interface IGitHubState {
 
 const DEFAULT_PAGINATION: IPagination = { page: 1, perPage: 10 };
 
-// Тип ответа с сервера
-interface IRepoResponse {
-    items: IGitHubRepo[];
-    total_count: number;
-}
-
 // Асинхронный экшен для загрузки репозиториев
 export const fetchRepos = createAsyncThunk(
     'github/fetchRepos',
@@ -27,9 +21,9 @@ export const fetchRepos = createAsyncThunk(
         const state = getState() as { github: IGitHubState };
 
         return {
+            ...response,
             items:
-                pagination.page === 1 ? response.items : [...state.github.repos, ...response.items],
-            total_count: response.total_count
+                pagination.page === 1 ? response.items : [...state.github.repos, ...response.items]
         };
     }
 );
@@ -58,7 +52,7 @@ const githubSlice = createSlice({
             .addCase(fetchRepos.pending, (state) => {
                 state.loading = true;
             })
-            .addCase(fetchRepos.fulfilled, (state, action: PayloadAction<IRepoResponse>) => {
+            .addCase(fetchRepos.fulfilled, (state, action: PayloadAction<IList<IGitHubRepo>>) => {
                 state.repos = action.payload.items;
                 state.totalCount = action.payload.total_count;
                 state.hasMoreItems = state.repos.length < action.payload.total_count;

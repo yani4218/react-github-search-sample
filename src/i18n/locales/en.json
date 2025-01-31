@@ -1,0 +1,7 @@
+{
+    "AppTitle": "Github search repos",
+    "SearchReposPlaceholder": "Search repos",
+    "ReposCount": "{{count}} from {{totalCount}}",
+    "DataNotFound": "Data not found",
+    "UpdateOn": "Update on {{date}}"
+}

@@ -1,0 +1,13 @@
+{
+    "files": [],
+    "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }],
+    "compilerOptions": {
+        "jsx": "react-jsx",
+        "esModuleInterop": true,
+        "baseUrl": "./",
+        "paths": {
+            "@shared/components": ["/src/shared/components/index.ts"],
+            "@shared/utils": ["src/shared/utils/index.ts"]
+        }
+    }
+}

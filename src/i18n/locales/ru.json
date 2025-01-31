@@ -1,0 +1,7 @@
+{
+    "AppTitle": "Поиск github репозиториев",
+    "SearchReposPlaceholder": "Поиск репозиториев",
+    "ReposCount": "{{count}} из {{totalCount}}",
+    "DataNotFound": "Данные не найдены.",
+    "UpdateOn": "Обновлено {{date}}"
+}

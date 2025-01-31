@@ -1,0 +1,23 @@
+.search-query {
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+    }
+
+    &__input {
+        border: 0;
+        outline: 0;
+        width: 350px;
+        padding-left: 5px;
+        color: var(--foreground-contrast);
+        background: transparent;
+        border-bottom: 1px solid var(--foreground-contrast);
+        font-size: 16px;
+        &::placeholder {
+            color: var(--foreground-contrast);
+            font-size: 15px;
+        }
+    }
+}

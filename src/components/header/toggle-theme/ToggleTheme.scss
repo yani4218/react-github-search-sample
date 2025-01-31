@@ -1,0 +1,20 @@
+.toggle-theme {
+    &__container {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+    &__light-icon {
+        display: flex;
+    }
+
+    &__switch {
+        display: flex;
+        margin: 0 8px;
+    }
+
+    &__dark-icon {
+        display: flex;
+    }
+}

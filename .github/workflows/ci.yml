@@ -34,8 +34,9 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        if: success()  # Деплой только если прошли линтер и тесты
+        if: success()
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist  # Папка, которую Vite использует для сборки
+          force_orphan: true  # Создать или форсировать "orphan"-ветку

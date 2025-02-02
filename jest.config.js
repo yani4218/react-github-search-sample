@@ -9,5 +9,6 @@ export default {
         '^.+\\.(ts|tsx)$': 'ts-jest',
         '^.+\\.(js|jsx)$': 'babel-jest'
     },
-    setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts']
+    setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
+    collectCoverage: true
 };

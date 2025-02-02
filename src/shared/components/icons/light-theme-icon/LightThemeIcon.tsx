@@ -1,6 +1,6 @@
 import './LightColorThemeIcon.scss';
 
-export function LightColorThemeIcon() {
+export const LightColorThemeIcon = () => {
     return (
         <>
             <svg
@@ -26,4 +26,4 @@ export function LightColorThemeIcon() {
             </svg>
         </>
     );
-}
+};

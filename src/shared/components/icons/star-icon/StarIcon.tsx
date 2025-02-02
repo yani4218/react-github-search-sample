@@ -1,6 +1,6 @@
 import './StarIcon.scss';
 
-export function StarIcon() {
+export const StarIcon = () => {
     return (
         <>
             <svg
@@ -15,4 +15,4 @@ export function StarIcon() {
             </svg>
         </>
     );
-}
+};

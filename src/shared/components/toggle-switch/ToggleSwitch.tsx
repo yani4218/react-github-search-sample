@@ -5,7 +5,7 @@ interface IToggleSwitchProps {
     onChange: (isDarkTheme: boolean) => void;
 }
 
-export function ToggleSwitch({ checked, onChange }: IToggleSwitchProps) {
+export const ToggleSwitch = ({ checked, onChange }: IToggleSwitchProps) => {
     return (
         <>
             <label className="toggle-switch">
@@ -19,4 +19,4 @@ export function ToggleSwitch({ checked, onChange }: IToggleSwitchProps) {
             </label>
         </>
     );
-}
+};

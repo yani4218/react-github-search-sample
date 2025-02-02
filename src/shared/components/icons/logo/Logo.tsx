@@ -1,6 +1,6 @@
 import './Logo.scss';
 
-export function Logo() {
+export const Logo = () => {
     return (
         <>
             <svg
@@ -15,4 +15,4 @@ export function Logo() {
             </svg>
         </>
     );
-}
+};

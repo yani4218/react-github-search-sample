@@ -8,7 +8,7 @@ export interface ISearchQueryProps {
     onQueryChange: (q: string) => void;
 }
 
-export function SearchQuery({ query, onQueryChange }: ISearchQueryProps) {
+export const SearchQuery = ({ query, onQueryChange }: ISearchQueryProps) => {
     const { t } = useTranslation();
     const [queryInputValue, setInputValue] = useState(query);
 
@@ -41,4 +41,4 @@ export function SearchQuery({ query, onQueryChange }: ISearchQueryProps) {
             </div>
         </>
     );
-}
+};

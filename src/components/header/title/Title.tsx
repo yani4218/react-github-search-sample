@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 
 import './Title.scss';
 
-export function Title() {
+export const Title = () => {
     const { t } = useTranslation();
 
     return (
@@ -12,4 +12,4 @@ export function Title() {
             </div>
         </>
     );
-}
+};

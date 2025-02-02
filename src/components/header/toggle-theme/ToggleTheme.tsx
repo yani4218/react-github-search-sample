@@ -8,7 +8,7 @@ import { setTheme } from '../../../data-access/store/themeSlice';
 
 import './ToggleTheme.scss';
 
-export function ToggleTheme() {
+export const ToggleTheme = () => {
     const dispatch = useDispatch<AppDispatch>();
     const { theme } = useSelector((state: RootState) => state.theme);
 
@@ -41,4 +41,4 @@ export function ToggleTheme() {
             </div>
         </>
     );
-}
+};

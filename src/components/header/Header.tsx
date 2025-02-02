@@ -6,7 +6,7 @@ import { ToggleLanguage } from './toggle-language/ToggleLanguage';
 
 import './Header.scss';
 
-export function Header() {
+export const Header = () => {
     return (
         <>
             <div className="header">
@@ -22,4 +22,4 @@ export function Header() {
             </div>
         </>
     );
-}
+};

@@ -15,7 +15,7 @@ export interface IGitHubRepsListProps {
     loadNextPage: () => void;
 }
 
-export function GitHubRepsList({ repos, hasMoreItems, loadNextPage }: IGitHubRepsListProps) {
+export const GitHubRepsList = ({ repos, hasMoreItems, loadNextPage }: IGitHubRepsListProps) => {
     const { t } = useTranslation();
     return (
         <>
@@ -38,4 +38,4 @@ export function GitHubRepsList({ repos, hasMoreItems, loadNextPage }: IGitHubRep
             </InfiniteScroll>
         </>
     );
-}
+};

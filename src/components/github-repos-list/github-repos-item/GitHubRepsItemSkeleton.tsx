@@ -1,8 +1,9 @@
 import Skeleton from 'react-loading-skeleton';
 
 import './GitHubRepsItem.scss';
+import { memo } from 'react';
 
-export function GitHubRepsItemSkeleton() {
+export const GitHubRepsItemSkeleton = memo(() => {
     return (
         <>
             <div className="github-repo-item">
@@ -20,4 +21,4 @@ export function GitHubRepsItemSkeleton() {
             </div>
         </>
     );
-}
+});

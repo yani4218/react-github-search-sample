@@ -11,7 +11,7 @@ import { fetchRepos, loadNextPage, setSearchQuery } from './data-access/store/gi
 
 import './App.scss';
 
-export function App() {
+export const App = () => {
     const { t } = useTranslation();
     const dispatch = useDispatch<AppDispatch>();
 
@@ -53,4 +53,4 @@ export function App() {
             />
         </>
     );
-}
+};

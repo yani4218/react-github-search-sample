@@ -13,7 +13,7 @@ export interface IGitHubRepsItemProps {
     repo: IGitHubRepo;
 }
 
-export function GitHubRepsItem({ repo }: IGitHubRepsItemProps) {
+export const GitHubRepsItem = ({ repo }: IGitHubRepsItemProps) => {
     const { t, i18n } = useTranslation();
 
     const updatedAt = useMemo(() => {
@@ -70,4 +70,4 @@ export function GitHubRepsItem({ repo }: IGitHubRepsItemProps) {
             </div>
         </>
     );
-}
+};

@@ -6,10 +6,10 @@ interface IEmptyStateProps {
     children: ReactNode;
 }
 
-export function EmptyState({ children }: IEmptyStateProps) {
+export const EmptyState = ({ children }: IEmptyStateProps) => {
     return (
         <>
             <div className="empty-state__container">{children}</div>
         </>
     );
-}
+};

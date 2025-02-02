@@ -9,7 +9,7 @@ import { setLang } from '../../../data-access/store/languageSlice';
 
 import './ToggleLanguage.scss';
 
-export function ToggleLanguage() {
+export const ToggleLanguage = () => {
     const { i18n } = useTranslation();
 
     const { lang, langs } = useSelector((state: RootState) => state.lang);
@@ -38,4 +38,4 @@ export function ToggleLanguage() {
             </div>
         </>
     );
-}
+};

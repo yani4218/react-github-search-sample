@@ -1,6 +1,6 @@
 import './DarkColorThemeIcon.scss';
 
-export function DarkColorThemeIcon() {
+export const DarkColorThemeIcon = () => {
     return (
         <>
             <svg
@@ -18,4 +18,4 @@ export function DarkColorThemeIcon() {
             </svg>
         </>
     );
-}
+};

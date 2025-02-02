@@ -1,4 +1,4 @@
-name: Build, Test, and Deploy
+name: Lint, Test, Build, and Deploy
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '22'  # Укажите необходимую версию Node.js
+          node-version: '22'
 
       - name: Install dependencies
         run: npm install
@@ -38,5 +38,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist  # Папка, которую Vite использует для сборки
-          force_orphan: true  # Создать или форсировать "orphan"-ветку
+          publish_dir: ./dist
+          force_orphan: true

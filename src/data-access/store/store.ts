@@ -4,6 +4,7 @@ import themeReducer from './themeSlice';
 import languageReducer from './languageSlice';
 
 export const store = configureStore({
+    devTools: true,
     reducer: {
         github: githubReducer,
         theme: themeReducer,

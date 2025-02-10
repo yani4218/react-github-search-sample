@@ -5,12 +5,6 @@ import react from '@vitejs/plugin-react-swc';
 export default defineConfig({
     base: '/react-github-search-sample/',
     plugins: [react()],
-    resolve: {
-        alias: {
-            '@shared/components': '/src/shared/components',
-            '@shared/utils': '/src/shared/utils'
-        }
-    },
     build: {
         outDir: 'dist'
     }

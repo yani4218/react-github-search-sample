@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
@@ -9,7 +9,7 @@ import { setLang } from '../../../data-access/store/languageSlice';
 
 import './ToggleLanguage.scss';
 
-export const ToggleLanguage = () => {
+export const ToggleLanguage = memo(() => {
     const { i18n } = useTranslation();
 
     const { lang, langs } = useSelector((state: RootState) => state.lang);
@@ -21,9 +21,12 @@ export const ToggleLanguage = () => {
         }
     }, [lang]);
 
-    const onChangeLang = (langOption: Option) => {
-        dispatch(setLang(langOption.value));
-    };
+    const onChangeLang = useCallback(
+        (langOption: Option) => {
+            dispatch(setLang(langOption.value));
+        },
+        [dispatch]
+    );
 
     return (
         <>
@@ -38,4 +41,4 @@ export const ToggleLanguage = () => {
             </div>
         </>
     );
-};
+});

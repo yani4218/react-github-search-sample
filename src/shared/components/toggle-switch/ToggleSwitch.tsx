@@ -5,6 +5,11 @@ interface IToggleSwitchProps {
     onChange: (isDarkTheme: boolean) => void;
 }
 
+/**
+ * @description Компонент для отображения switch slider
+ * @param checked - состояние выбрано или нет для switch slider
+ * @param onChange - обработчик нового состояния выбора для switch slider
+ */
 export const ToggleSwitch = ({ checked, onChange }: IToggleSwitchProps) => {
     return (
         <>

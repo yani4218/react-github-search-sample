@@ -1,10 +1,10 @@
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-import { GitHubRepsList } from './components/github-repos-list/GitHubRepsList';
-import { Header } from './components/header/Header';
-import { SearchQuery } from './components/search-query/SearchQuery';
+import { GitHubRepsList } from './features/github-repos-list/GitHubRepsList';
+import { Header } from './features/header/Header';
+import { SearchQuery } from './features/search-query/SearchQuery';
 
 import { AppDispatch, RootState } from './data-access/store/store';
 import { fetchRepos, loadNextPage, setSearchQuery } from './data-access/store/githubSlice';
@@ -23,13 +23,16 @@ export const App = () => {
         dispatch(fetchRepos({ query, pagination }));
     }, [dispatch, query, pagination]);
 
-    const onLoadNextPage = () => {
+    const onLoadNextPage = useCallback(() => {
         dispatch(loadNextPage());
-    };
+    }, [dispatch]);
 
-    const onSearch = (q: string) => {
-        dispatch(setSearchQuery(q));
-    };
+    const onSearch = useCallback(
+        (q: string) => {
+            dispatch(setSearchQuery(q));
+        },
+        [dispatch]
+    );
 
     return (
         <>

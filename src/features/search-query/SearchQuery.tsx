@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import './SearchQuery.scss';
@@ -8,7 +8,7 @@ export interface ISearchQueryProps {
     onQueryChange: (q: string) => void;
 }
 
-export const SearchQuery = ({ query, onQueryChange }: ISearchQueryProps) => {
+export const SearchQuery = memo(({ query, onQueryChange }: ISearchQueryProps) => {
     const { t } = useTranslation();
     const [queryInputValue, setInputValue] = useState(query);
 
@@ -41,4 +41,4 @@ export const SearchQuery = ({ query, onQueryChange }: ISearchQueryProps) => {
             </div>
         </>
     );
-};
+});

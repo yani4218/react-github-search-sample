@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { ToggleSwitch, DarkColorThemeIcon, LightColorThemeIcon } from '../../../shared/components';
@@ -8,7 +8,7 @@ import { setTheme } from '../../../data-access/store/themeSlice';
 
 import './ToggleTheme.scss';
 
-export const ToggleTheme = () => {
+export const ToggleTheme = memo(() => {
     const dispatch = useDispatch<AppDispatch>();
     const { theme } = useSelector((state: RootState) => state.theme);
 
@@ -20,9 +20,12 @@ export const ToggleTheme = () => {
         document.body.dataset.theme = theme;
     };
 
-    const onChangeTheme = (isDarkTheme: boolean) => {
-        dispatch(setTheme(isDarkTheme));
-    };
+    const onChangeTheme = useCallback(
+        (isDarkTheme: boolean) => {
+            dispatch(setTheme(isDarkTheme));
+        },
+        [dispatch]
+    );
 
     return (
         <>
@@ -41,4 +44,4 @@ export const ToggleTheme = () => {
             </div>
         </>
     );
-};
+});

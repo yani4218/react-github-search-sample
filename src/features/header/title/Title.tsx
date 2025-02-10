@@ -1,8 +1,9 @@
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import './Title.scss';
 
-export const Title = () => {
+export const Title = memo(() => {
     const { t } = useTranslation();
 
     return (
@@ -12,4 +13,4 @@ export const Title = () => {
             </div>
         </>
     );
-};
+});

@@ -3,8 +3,8 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { App } from './App';
-import { IGitHubRepsListProps } from './components/github-repos-list/GitHubRepsList';
-import { ISearchQueryProps } from './components/search-query/SearchQuery';
+import { IGitHubRepsListProps } from './features/github-repos-list/GitHubRepsList';
+import { ISearchQueryProps } from './features/search-query/SearchQuery';
 
 import { fetchRepos, loadNextPage, setSearchQuery } from './data-access/store/githubSlice';
 
@@ -25,7 +25,7 @@ jest.mock('./data-access/store/githubSlice', () => ({
     setSearchQuery: jest.fn()
 }));
 
-jest.mock('./components/github-repos-list/GitHubRepsList', () => ({
+jest.mock('./features/github-repos-list/GitHubRepsList', () => ({
     GitHubRepsList: ({ repos, loadNextPage }: IGitHubRepsListProps) => (
         <div data-testid="github-repos-list">
             <div>Repos: {repos.length}</div>
@@ -34,11 +34,11 @@ jest.mock('./components/github-repos-list/GitHubRepsList', () => ({
     )
 }));
 
-jest.mock('./components/header/Header', () => ({
+jest.mock('./features/header/Header', () => ({
     Header: () => <div data-testid="header">Header</div>
 }));
 
-jest.mock('./components/search-query/SearchQuery', () => ({
+jest.mock('./features/search-query/SearchQuery', () => ({
     SearchQuery: ({ query, onQueryChange }: ISearchQueryProps) => {
         return (
             <input

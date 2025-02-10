@@ -6,6 +6,10 @@ interface IEmptyStateProps {
     children: ReactNode;
 }
 
+/**
+ * @description Компонент для отображения состояния, когда нет данных
+ * @param children - Props принимает контент, который отображается когда нет данных
+ */
 export const EmptyState = ({ children }: IEmptyStateProps) => {
     return (
         <>

@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { useTranslation } from 'react-i18next';
 
@@ -5,7 +6,7 @@ import { GitHubRepsItem } from './github-repos-item/GitHubRepsItem';
 import { GitHubRepsItemSkeleton } from './github-repos-item/GitHubRepsItemSkeleton';
 import { EmptyState } from '../../shared/components';
 
-import { IGitHubRepo } from '../../entities';
+import { IGitHubRepo } from '../../shared/entities';
 
 import './GitHubRepsList.scss';
 
@@ -15,7 +16,7 @@ export interface IGitHubRepsListProps {
     loadNextPage: () => void;
 }
 
-export const GitHubRepsList = ({ repos, hasMoreItems, loadNextPage }: IGitHubRepsListProps) => {
+export const GitHubRepsList: FC<IGitHubRepsListProps> = ({ repos, hasMoreItems, loadNextPage }) => {
     const { t } = useTranslation();
     return (
         <>

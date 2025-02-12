@@ -1,3 +1,5 @@
+import { FC } from 'react';
+
 import './ToggleSwitch.scss';
 
 interface IToggleSwitchProps {
@@ -10,7 +12,7 @@ interface IToggleSwitchProps {
  * @param checked - состояние выбрано или нет для switch slider
  * @param onChange - обработчик нового состояния выбора для switch slider
  */
-export const ToggleSwitch = ({ checked, onChange }: IToggleSwitchProps) => {
+export const ToggleSwitch: FC<IToggleSwitchProps> = ({ checked, onChange }) => {
     return (
         <>
             <label className="toggle-switch">

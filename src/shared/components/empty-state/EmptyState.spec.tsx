@@ -1,4 +1,6 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
+
 import { EmptyState } from './EmptyState';
 
 describe('EmptyState component', () => {

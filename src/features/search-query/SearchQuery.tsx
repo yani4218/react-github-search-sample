@@ -1,4 +1,4 @@
-import { memo, useEffect, useState } from 'react';
+import { FC, memo, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import './SearchQuery.scss';
@@ -8,7 +8,7 @@ export interface ISearchQueryProps {
     onQueryChange: (q: string) => void;
 }
 
-export const SearchQuery = memo(({ query, onQueryChange }: ISearchQueryProps) => {
+export const SearchQuery: FC<ISearchQueryProps> = memo(({ query, onQueryChange }) => {
     const { t } = useTranslation();
     const [queryInputValue, setInputValue] = useState(query);
 

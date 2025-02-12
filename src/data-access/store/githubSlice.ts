@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { getRepos } from '../api';
-import { IGitHubRepo, IList, IPagination } from '../../entities';
+import { IGitHubRepo, IList, IPagination } from '../../shared/entities';
 
 interface IGitHubState {
     repos: IGitHubRepo[];

@@ -5,7 +5,7 @@ import { StarIcon } from '../../../shared/components';
 
 import { dateFormatted } from '../../../shared/utils';
 
-import { IGitHubRepo } from '../../../entities';
+import { IGitHubRepo } from '../../../shared/entities';
 
 import './GitHubRepsItem.scss';
 

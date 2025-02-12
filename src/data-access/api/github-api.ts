@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { IGitHubRepo, IList, IPagination } from '../../entities';
+import { IGitHubRepo, IList, IPagination } from '../../shared/entities';
 
 /**
  * @description API запрос для получения списка GitHub репозиториев

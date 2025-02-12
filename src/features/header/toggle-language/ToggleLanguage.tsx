@@ -19,7 +19,7 @@ export const ToggleLanguage = memo(() => {
         if (i18n.language !== lang) {
             i18n.changeLanguage(lang);
         }
-    }, [lang]);
+    }, [i18n, lang]);
 
     const onChangeLang = useCallback(
         (langOption: Option) => {
